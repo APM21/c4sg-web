@@ -1,10 +1,65 @@
-<div class="page-title-center">
-  <h1>Our Stories</h1>
+<div class="title"> Our Stories</div>
+<div class="top-image">
+  <img src="../../assets/ourstories.jpg" />
+  <button type="submit" data-tooltip="Available soon" class="btn button-colored">SHARE YOUR STORY
+  </button>
+
+
 </div>
-<div class="container content">
-  <div class="row">
-    <div class="col s8 offset-s2">
-      <h5>Coming soon</h5>
+<div class="main-stories-container">
+  <div class="most-recent-container">
+    <div class="image">
+      <img src="../../assets/treeinventory.jpg" />
     </div>
+    <div class="text">
+    A globally accessible platform that allows both non-profit organizations and volunteers to find the perfect match for their needs, skill sets and interests. We are building digital bridges that make the strengthen the non-profit community. <br><br>
+    A positive community of support is the cornerstone of the non-profit world, and here at CS4G it is our aim to create a community and environment where everyone thrives and has access to the support they need. <br><br>
+    We are CODE FOR SOCIAL GOOD.
+    </div>
+    <div class="full-story-bar">
+      <div class="most-recent-success">CONNECT &middot; SUPPORT</div>
+      <div class="full-story" data-tooltip="Available soon">READ FULL STORY</div>
+      <div class="share-icon mdi mdi-share-variant mdi-24px left"></div>
+    </div>
+  </div>
+  <div class="signup-container">
+    <div class="want-to-join">WANT TO JOIN GLOBAL NETWORK WHERE SOCIAL GOOD HAPPENS?</div>
+    <div class="signup-bar"  (click)="authSvc.login()">SIGN UP</div>
+  </div>
+</div>
+
+<div class="volunteer-stories-container">
+  <div class="separator volunteer">VOLUNTEER STORIES</div>
+  <div class="cards-container">
+    <div class="story-card" *ngFor="let card of volunteerStories">
+      <div class="story-card-container">
+        <div class="volunteer-image" style="margin-bottom: 1em;">
+          <img [src]="card.imageUrl" onError="this.src='../../assets/default_image.png'">
+        </div>
+        <div class="text" [textContent]="card.title"></div>
+      </div>
+      <div class="card-read-story-bar volunteer">READ FULL STORY</div>
+    </div>
+  </div>
+  <div class="see-more-btn">
+    <button type="submit" data-tooltip="Available soon" class="btn button-colored" >SEE MORE</button>
+  </div>
+</div>
+
+<div class="organizations-stories-container">
+  <div class="separator organization">ORGANIZATIONS STORIES</div>
+  <div class="cards-container">
+    <div class="story-card" *ngFor="let card of organizationsStories">
+      <div class="story-card-container">
+        <div class="organization-image" style="margin-bottom: 1em;">
+          <img [src]="card.imageUrl" onError="this.src='../../assets/default_image.png'">
+        </div>
+        <div class="text" [textContent]="card.title"></div>
+      </div>
+      <div class="card-read-story-bar organization">READ FULL STORY</div>
+    </div>
+  </div>
+  <div class="see-more-btn margin-bottom">
+    <button type="submit" data-tooltip="Available soon" class="btn button-colored">SEE MORE</button>
   </div>
 </div>
